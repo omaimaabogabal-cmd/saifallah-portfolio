@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saifallah Mohamed | Pro Cycling Athlete Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#0a0a0c',
+                        darkpanel: '#121318',
+                        cardbg: '#181a22',
+                        electriclime: '#ccff00',
+                        racingred: '#ff1e1e',
+                        bordergray: '#2a2d3d'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0c;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2d3d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ccff00;
+        }
+        .glow-lime {
+            box-shadow: 0 0 30px rgba(204, 255, 0, 0.15);
+        }
+        .glow-lime-hover:hover {
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-charcoal text-gray-100 antialiased selection:bg-electriclime selection:text-black">
+
+    <!-- HEADER / STICKY NAVIGATION -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-charcoal/80 backdrop-blur-md border-b border-bordergray/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-lg bg-electriclime flex items-center justify-center font-black text-black text-xl tracking-tighter transition-transform group-hover:scale-105">
+                    SM
+                </div>
+                <div>
+                    <span class="font-display font-extrabold text-lg tracking-wider block text-white">SAIFALLAH MOHAMED</span>
+                    <span class="text-xs text-electriclime font-semibold tracking-widest uppercase block">U19 National Team Cyclist</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <a href="#profile" class="text-gray-300 hover:text-electriclime transition-colors">Profile</a>
+                <a href="#stats" class="text-gray-300 hover:text-electriclime transition-colors">Performance</a>
+                <a href="#gallery" class="text-gray-300 hover:text-electriclime transition-colors">Gallery</a>
+                <a href="#videos" class="text-gray-300 hover:text-electriclime transition-colors">Videos</a>
+                <a href="#timeline" class="text-gray-300 hover:text-electriclime transition-colors">Career Timeline</a>
+                <a href="#cv" class="text-gray-300 hover:text-electriclime transition-colors">CV & Resume</a>
+                <a href="#contact" class="px-4 py-2 bg-electriclime text-black font-semibold rounded-md hover:bg-white transition-all">Get in Touch</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="lg:hidden text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-darkpanel border-b border-bordergray px-6 py-4 space-y-3">
+            <a href="#profile" class="block text-gray-300 hover:text-electriclime py-2">Profile</a>
+            <a href="#stats" class="block text-gray-300 hover:text-electriclime py-2">Performance</a>
+            <a href="#gallery" class="block text-gray-300 hover:text-electriclime py-2">Gallery</a>
+            <a href="#videos" class="block text-gray-300 hover:text-electriclime py-2">Videos</a>
+            <a href="#timeline" class="block text-gray-300 hover:text-electriclime py-2">Career Timeline</a>
+            <a href="#cv" class="block text-gray-300 hover:text-electriclime py-2">CV & Resume</a>
+            <a href="#contact" class="block text-center mt-2 px-4 py-3 bg-electriclime text-black font-bold rounded-md">Get in Touch</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO / OPENING SCREEN -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Cinematic Dark Gradient Overlay (Using Saifallah's uploaded Egyptian National Team flag victory photo: assets/photo_podium_vertical.jpeg) -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/photo_podium_vertical.jpeg" alt="Saifallah Mohamed Podium Victory Flag" class="w-full h-full object-cover object-center filter brightness-75 contrast-110 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-black/70"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(10,10,12,0.9)_100%)]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-darkpanel/80 border border-bordergray mb-6 backdrop-blur-sm">
+                <span class="w-2.5 h-2.5 rounded-full bg-electriclime animate-ping"></span>
+                <span class="text-xs uppercase font-bold tracking-widest text-electriclime">Egyptian National Team • Road & Track</span>
+            </div>
+
+            <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase mb-4 leading-none">
+                SAIFALLAH <span class="text-transparent bg-clip-text bg-gradient-to-r from-electriclime to-emerald-400">MOHAMED</span>
+            </h1>
+
+            <p class="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-300 tracking-wide mb-6 uppercase">
+                Competitive Cyclist | Endurance Athlete
+            </p>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10">
+                “Driven by Speed. Defined by Endurance.” Multi-time Egyptian National Champion, African Championship medalist, and international competitor across Africa, Asia, and the UAE.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#profile" class="w-full sm:w-auto px-8 py-4 bg-electriclime text-black font-extrabold rounded-md hover:bg-white transition-all shadow-lg glow-lime flex items-center justify-center space-x-3 group">
+                    <span>Explore My Journey</span>
+                    <i class="fa-solid fa-arrow-down transition-transform group-hover:translate-y-1"></i>
+                </a>
+                <a href="#cv" class="w-full sm:w-auto px-8 py-4 bg-darkpanel/80 hover:bg-darkpanel text-white font-bold rounded-md border border-bordergray transition-all backdrop-blur-sm flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-file-arrow-down text-electriclime"></i>
+                    <span>Download Athlete CV</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden md:flex flex-col items-center text-gray-400">
+            <span class="text-xs tracking-widest uppercase mb-2 font-mono">Scroll Down</span>
+            <div class="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center p-1">
+                <div class="w-1.5 h-3 bg-electriclime rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ATHLETE PROFILE -->
+    <section id="profile" class="py-24 bg-darkpanel relative border-t border-bordergray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">01 // THE ATHLETE</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight">Athlete Profile & Background</h2>
+                <div class="w-20 h-1 bg-electriclime mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Portrait / Racing Photo (Using uploaded Saiffalah Portfolio Cover Page: Saifallah_Mohamed_Athletic_Scholarship_Portfolio_Updated_Same_Layout.pdf Page 1 / assets/photo_team_podium.jpeg) -->
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-electriclime to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative rounded-xl overflow-hidden border border-bordergray bg-cardbg shadow-2xl">
+                        <img src="assets/photo_team_podium.jpeg" alt="Saifallah Mohamed National Champion Podium 1st Place" class="w-full h-auto object-cover transform transition duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
+                            <span class="text-electriclime text-xs font-mono uppercase tracking-wider block">Egyptian National Team</span>
+                            <span class="text-white font-display font-bold text-xl">Road & Track Specialist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Bio & Key Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">
+                        Saifallah Mohamed Ibrahim Ali Alsayed
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed text-base sm:text-lg">
+                        Egyptian U19 cyclist competing internationally in road and track cycling. As an elite National Team athlete, I have secured multiple Egyptian national titles, African Championship medals, World Championship experience, and international racing podiums across Africa, Asia, and the UAE.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Alongside competitive cycling, I maintain high academic excellence in the American curriculum (GPA 3.8) and aspire to pursue university education in Physical Therapy while continuing to race at the absolute highest global level.
+                    </p>
+
+                    <!-- Quick Facts Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Date of Birth</span>
+                            <span class="text-white font-bold text-lg font-display">15 Jan 2008</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Nationality</span>
+                            <span class="text-white font-bold text-lg font-display">Egyptian 🇪🇬</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Club / Team</span>
+                            <span class="text-white font-bold text-lg font-display">6th of October</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Coach</span>
+                            <span class="text-white font-bold text-lg font-display">Cristiano Felopy</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Experience</span>
+                            <span class="text-white font-bold text-lg font-display">5+ Years</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Disciplines</span>
+                            <span class="text-white font-bold text-lg font-display">Road & Track</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: CAREER HIGHLIGHTS & STATISTICS -->
+    <section id="stats" class="py-24 bg-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">02 // TRACK RECORD & METRICS</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight">Performance & Statistics</h2>
+                <div class="w-20 h-1 bg-electriclime mx-auto mt-4"></div>
+            </div>
+
+            <!-- Big Stats Counter Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-darkpanel p-8 rounded-xl border border-bordergray text-center hover:border-electriclime transition-colors">
+                    <span class="font-display text-4xl sm:text-6xl font-black text-electriclime block mb-2">5+</span>
+                    <span class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Years Experience</span>
+                </div>
+                <div class="bg-darkpanel p-8 rounded-xl border border-bordergray text-center hover:border-electriclime transition-colors">
+                    <span class="font-display text-4xl sm:text-6xl font-black text-white block mb-2">3x</span>
+                    <span class="text-sm font-semibold text-gray-300 uppercase tracking-wider">National Champion</span>
+                </div>
+                <div class="bg-darkpanel p-8 rounded-xl border border-bordergray text-center hover:border-electriclime transition-colors">
+                    <span class="font-display text-4xl sm:text-6xl font-black text-electriclime block mb-2">1st</span>
+                    <span class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Ajman Race Overall (UAE)</span>
+                </div>
+                <div class="bg-darkpanel p-8 rounded-xl border border-bordergray text-center hover:border-electriclime transition-colors">
+                    <span class="font-display text-4xl sm:text-6xl font-black text-white block mb-2">7+</span>
+                    <span class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Countries Raced In</span>
+                </div>
+            </div>
+
+            <!-- Power Data & Benchmarks Table -->
+            <div class="bg-darkpanel rounded-xl border border-bordergray p-6 sm:p-10">
+                <h3 class="font-display text-xl sm:text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa-solid fa-bolt text-electriclime mr-3"></i> Power & Track Physical Benchmarks
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-cardbg p-5 rounded-lg border border-bordergray">
+                        <span class="text-xs text-gray-400 font-mono block">20-Min Power</span>
+                        <span class="text-2xl sm:text-3xl font-black font-display text-electriclime">340 W</span>
+                    </div>
+                    <div class="bg-cardbg p-5 rounded-lg border border-bordergray">
+                        <span class="text-xs text-gray-400 font-mono block">1 KM Time Trial</span>
+                        <span class="text-2xl sm:text-3xl font-black font-display text-white">1:05</span>
+                    </div>
+                    <div class="bg-cardbg p-5 rounded-lg border border-bordergray">
+                        <span class="text-xs text-gray-400 font-mono block">3 KM Pursuit</span>
+                        <span class="text-2xl sm:text-3xl font-black font-display text-white">3:30</span>
+                    </div>
+                    <div class="bg-cardbg p-5 rounded-lg border border-bordergray">
+                        <span class="text-xs text-gray-400 font-mono block">Flying 200m</span>
+                        <span class="text-2xl sm:text-3xl font-black font-display text-white">11 sec</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400 italic">
+                    *Athlete-supplied 1-hour race data (21 August 2026): approx. 270 W average power and 350 W normalized power. Tested under official racing conditions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: RACING GALLERY (original photos supplied by the athlete) -->
+    <section id="gallery" class="py-24 bg-darkpanel relative border-t border-bordergray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">03 // ACTION & PODIUMS</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight">Racing Gallery</h2>
+                <p class="text-gray-400 mt-2">Select any photograph to view it in full size.</p>
+                <div class="w-20 h-1 bg-electriclime mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-xl overflow-hidden border border-bordergray bg-cardbg cursor-pointer" onclick="openLightbox('assets/photo_team_podium.jpeg', 'Cycling team podium')">
+                    <img src="assets/photo_team_podium.jpeg" alt="Cyclists at a podium ceremony" loading="lazy" class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6"><span class="text-electriclime text-xs font-mono">PODIUM</span><h4 class="text-white font-bold text-lg">Team Podium</h4></div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden border border-bordergray bg-cardbg cursor-pointer" onclick="openLightbox('assets/photo_training_road.jpeg', 'Road cycling training')">
+                    <img src="assets/photo_training_road.jpeg" alt="Two cyclists with their bicycles outdoors" loading="lazy" class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6"><span class="text-electriclime text-xs font-mono">TRAINING</span><h4 class="text-white font-bold text-lg">Road Training</h4></div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden border border-bordergray bg-cardbg cursor-pointer" onclick="openLightbox('assets/photo_awards_stage.jpeg', 'Cycling awards ceremony')">
+                    <img src="assets/photo_awards_stage.jpeg" alt="Cyclists at an awards event" loading="lazy" class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6"><span class="text-electriclime text-xs font-mono">AWARDS</span><h4 class="text-white font-bold text-lg">Awards Ceremony</h4></div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden border border-bordergray bg-cardbg cursor-pointer" onclick="openLightbox('assets/photo_podium_landscape.jpeg', 'Cycling podium')">
+                    <img src="assets/photo_podium_landscape.jpeg" alt="Cyclists standing on a winners podium" loading="lazy" class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6"><span class="text-electriclime text-xs font-mono">COMPETITION</span><h4 class="text-white font-bold text-lg">Competition Podium</h4></div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden border border-bordergray bg-cardbg cursor-pointer" onclick="openLightbox('assets/photo_podium_vertical.jpeg', 'Cycling podium celebration')">
+                    <img src="assets/photo_podium_vertical.jpeg" alt="Cyclists celebrating at a podium" loading="lazy" class="w-full h-72 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6"><span class="text-electriclime text-xs font-mono">PODIUM</span><h4 class="text-white font-bold text-lg">Podium Celebration</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 5: RACING VIDEOS & HIGHLIGHTS (original clips supplied by the athlete) -->
+    <main id="videos" class="py-24 bg-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">04 // CINEMATIC SPEED</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight">Racing Videos & Highlights</h2>
+                <p class="text-gray-400 mt-2">Select a clip below to play it in the video player.</p>
+                <div class="w-20 h-1 bg-electriclime mx-auto mt-4"></div>
+            </div>
+            <div class="bg-darkpanel rounded-xl border border-bordergray overflow-hidden shadow-2xl mb-12">
+                <div class="relative bg-black">
+                    <video id="featured-video" controls playsinline preload="metadata" poster="assets/video_velodrome_long_poster.jpg" class="w-full max-h-[70vh] aspect-video object-contain">
+                        <source src="assets/video_velodrome_long.mp4" type="video/mp4">
+                        Your browser does not support HTML video.
+                    </video>
+                </div>
+                <div class="p-5"><p id="featured-video-title" class="text-white font-bold text-lg">Velodrome footage</p><p class="text-xs text-gray-400 mt-1">Video provided by the athlete.</p></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <button type="button" onclick="playPortfolioVideo('assets/video_podium_clip.mp4','assets/video_podium_clip_poster.jpg','Cycling event footage')" class="text-left bg-darkpanel rounded-xl border border-bordergray overflow-hidden group focus:outline-none focus:ring-2 focus:ring-electriclime">
+                    <div class="relative aspect-video bg-black"><img src="assets/video_podium_clip_poster.jpg" alt="Preview frame from cycling event video" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition"><div class="absolute inset-0 flex items-center justify-center"><span class="w-12 h-12 bg-electriclime text-black rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-play text-sm ml-0.5"></i></span></div></div>
+                    <div class="p-5"><span class="text-xs text-electriclime font-mono">VIDEO 02</span><h4 class="text-white font-bold text-base mt-1">Cycling Event Footage</h4><p class="text-xs text-gray-400 mt-2">Play this original clip in the main player.</p></div>
+                </button>
+                <button type="button" onclick="playPortfolioVideo('assets/video_track_wide.mp4','assets/video_track_wide_poster.jpg','Track footage')" class="text-left bg-darkpanel rounded-xl border border-bordergray overflow-hidden group focus:outline-none focus:ring-2 focus:ring-electriclime">
+                    <div class="relative aspect-video bg-black"><img src="assets/video_track_wide_poster.jpg" alt="Preview frame from track video" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition"><div class="absolute inset-0 flex items-center justify-center"><span class="w-12 h-12 bg-electriclime text-black rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-play text-sm ml-0.5"></i></span></div></div>
+                    <div class="p-5"><span class="text-xs text-electriclime font-mono">VIDEO 03</span><h4 class="text-white font-bold text-base mt-1">Track Footage</h4><p class="text-xs text-gray-400 mt-2">Play this original clip in the main player.</p></div>
+                </button>
+                <button type="button" onclick="playPortfolioVideo('assets/video_track_short.mp4','assets/video_track_short_poster.jpg','Short track clip')" class="text-left bg-darkpanel rounded-xl border border-bordergray overflow-hidden group focus:outline-none focus:ring-2 focus:ring-electriclime">
+                    <div class="relative aspect-video bg-black"><img src="assets/video_track_short_poster.jpg" alt="Preview frame from short track clip" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition"><div class="absolute inset-0 flex items-center justify-center"><span class="w-12 h-12 bg-electriclime text-black rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-play text-sm ml-0.5"></i></span></div></div>
+                    <div class="p-5"><span class="text-xs text-electriclime font-mono">VIDEO 04</span><h4 class="text-white font-bold text-base mt-1">Track Clip</h4><p class="text-xs text-gray-400 mt-2">Play this original clip in the main player.</p></div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECTION 6: ACHIEVEMENTS & RACING CAREER (TIMELINE) -->
+    <section id="timeline" class="py-24 bg-darkpanel relative border-t border-bordergray">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">05 // COMPETITIVE JOURNEY</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight">Career Timeline & Achievements</h2>
+                <div class="w-20 h-1 bg-electriclime mx-auto mt-4"></div>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="relative border-l-2 border-bordergray ml-4 sm:ml-8 space-y-12">
+                <!-- Timeline Item 2026 -->
+                <div class="relative pl-8 sm:pl-12 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-electriclime border-4 border-darkpanel group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-electriclime font-bold uppercase tracking-wider">2026 Season</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-1">Egyptian National Champion - Road & Track</h3>
+                    <p class="text-gray-400 text-sm mt-1">Defending national titles with dominant performances in both road racing and velodrome track disciplines.</p>
+                </div>
+
+                <!-- Timeline Item 2025 -->
+                <div class="relative pl-8 sm:pl-12 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-electriclime border-4 border-darkpanel group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-electriclime font-bold uppercase tracking-wider">2025 Season</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-1">World Championships & African Championships</h3>
+                    <ul class="text-gray-300 text-sm mt-2 space-y-1 list-disc list-inside">
+                        <li>56th in Junior Individual Time Trial - World Cycling Championships (Kigali, Rwanda)</li>
+                        <li>CAC Track African Championships, Cairo: 2nd Team Pursuit; 3rd Elimination; 3rd Individual Pursuit</li>
+                        <li>African Track Championship, Nigeria: 3 medals (1 Silver, 2 Bronze)</li>
+                        <li>14th in Individual Time Trial - African Championship (Kenya)</li>
+                    </ul>
+                </div>
+
+                <!-- Timeline Item 2024 -->
+                <div class="relative pl-8 sm:pl-12 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-electriclime border-4 border-darkpanel group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-electriclime font-bold uppercase tracking-wider">2024 Season</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-1">International Podiums in UAE</h3>
+                    <ul class="text-gray-300 text-sm mt-2 space-y-1 list-disc list-inside">
+                        <li>1st Overall - Ajman Cycling Race, UAE</li>
+                        <li>1st - TMG Crit League</li>
+                        <li>3rd Junior - Al Ain Cycling Race, UAE</li>
+                        <li>2nd Junior - Al Ain Cycle Track Classic, UAE</li>
+                    </ul>
+                </div>
+
+                <!-- Timeline Item Juniors -->
+                <div class="relative pl-8 sm:pl-12 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-electriclime border-4 border-darkpanel group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-electriclime font-bold uppercase tracking-wider">2021 - 2023</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-1">National Age-Group Dominance & Multi-Sport Success</h3>
+                    <ul class="text-gray-300 text-sm mt-2 space-y-1 list-disc list-inside">
+                        <li>1st Place - U14, U16, U18 Egyptian National Championships (Individual Time Trial & Road)</li>
+                        <li>1st Place - Badya Super Cycle Race</li>
+                        <li>African & Arab Champion in Wushu Kung Fu (3rd Place - Junior World Wushu Championship, Indonesia 2022)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: ATHLETE CV / DOWNLOADABLE RESUME -->
+    <section id="cv" class="py-24 bg-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">06 // PROFESSIONAL CREDENTIALS</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight">Athlete CV & Resume</h2>
+                <div class="w-20 h-1 bg-electriclime mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-darkpanel rounded-2xl border border-bordergray p-8 sm:p-12">
+                <!-- Left: Professional Summary & Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="px-3 py-1 bg-electriclime/10 text-electriclime text-xs font-mono rounded border border-electriclime/30">Official Collegiate Portfolio</span>
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">
+                        Saifallah Mohamed — Academic & Athletic CV
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        My athletic profile combines Egyptian National Team representation, repeated national championship success, African Championship medals, World Championship participation, international racing experience, and measurable track and power performance.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 py-2">
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">High School</span>
+                            <span class="text-white font-bold">Brilliance (American Curriculum)</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Expected GPA & SAT</span>
+                            <span class="text-white font-bold">3.8 GPA | 1080 SAT</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Intended Field</span>
+                            <span class="text-white font-bold">Physical Therapy</span>
+                        </div>
+                        <div class="bg-cardbg p-4 rounded-lg border border-bordergray">
+                            <span class="text-xs text-gray-400 font-mono block">Graduation</span>
+                            <span class="text-white font-bold">July 2027</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                        <a href="Saifallah_Mohamed_Athletic_Scholarship_Portfolio_Updated_Same_Layout.pdf" download class="px-8 py-4 bg-electriclime text-black font-extrabold rounded-md hover:bg-white transition-all shadow-lg glow-lime flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-file-arrow-down text-lg"></i>
+                            <span>Download Athlete CV (PDF)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: CV Preview Mockup -->
+                <div class="lg:col-span-5 bg-cardbg p-6 rounded-xl border border-bordergray relative group">
+                    <div class="absolute top-4 right-4 bg-electriclime text-black text-xs font-mono font-bold px-2.5 py-1 rounded">PDF Document</div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 rounded bg-electriclime/10 text-electriclime flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Saifallah_Mohamed_Athletic_Scholarship_Portfolio.pdf</h4>
+                            <span class="text-xs text-gray-400">Official Scholarship & Racing CV</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-xs text-gray-300 font-mono bg-charcoal p-4 rounded-lg border border-bordergray mb-6">
+                        <div class="flex justify-between border-b border-bordergray pb-2">
+                            <span>Pages:</span> <span class="text-white font-bold">4 Pages</span>
+                        </div>
+                        <div class="flex justify-between border-b border-bordergray pb-2">
+                            <span>Format:</span> <span class="text-white font-bold">Standard PDF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Status:</span> <span class="text-electriclime font-bold">Verified & Connected</span>
+                        </div>
+                    </div>
+                    <a href="Saifallah_Mohamed_Athletic_Scholarship_Portfolio_Updated_Same_Layout.pdf" target="_blank" class="w-full py-3 bg-darkpanel hover:bg-bordergray text-white font-bold text-center rounded-lg border border-bordergray block transition">
+                        Preview Full PDF in New Tab
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: SPONSORS & PARTNERSHIPS -->
+    <section id="sponsors" class="py-20 bg-darkpanel relative border-t border-bordergray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">07 // OFFICIAL PARTNERS</span>
+            <h2 class="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight mb-12">Teams, Federations & Partners</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-80">
+                <div class="bg-cardbg p-6 rounded-xl border border-bordergray flex flex-col items-center justify-center h-32">
+                    <span class="font-display font-black text-xl text-white tracking-widest">ECF</span>
+                    <span class="text-xs text-gray-400 mt-1">Egyptian Cycling Federation</span>
+                </div>
+                <div class="bg-cardbg p-6 rounded-xl border border-bordergray flex flex-col items-center justify-center h-32">
+                    <span class="font-display font-black text-xl text-electriclime tracking-widest">UCI</span>
+                    <span class="text-xs text-gray-400 mt-1">Union Cycliste Internationale</span>
+                </div>
+                <div class="bg-cardbg p-6 rounded-xl border border-bordergray flex flex-col items-center justify-center h-32">
+                    <span class="font-display font-black text-xl text-white tracking-widest">CAC</span>
+                    <span class="text-xs text-gray-400 mt-1">Confédération Africaine de Cyclisme</span>
+                </div>
+                <div class="bg-cardbg p-6 rounded-xl border border-bordergray flex flex-col items-center justify-center h-32">
+                    <span class="font-display font-black text-xl text-electriclime tracking-widest">6TH OF OCTOBER</span>
+                    <span class="text-xs text-gray-400 mt-1">Official Racing Club</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: CONTACT & SOCIAL MEDIA -->
+    <section id="contact" class="py-24 bg-charcoal relative border-t border-bordergray">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs uppercase font-mono tracking-widest text-electriclime block mb-2">08 // GET IN TOUCH</span>
+            <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight mb-4">Collegiate Inquiries & Partnerships</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-12">
+                Interested in offering an athletic scholarship, recruitment opportunity, or sports partnership? Connect directly below.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <a href="mailto:Saiflightmohamed@gmail.com" class="bg-darkpanel p-6 rounded-xl border border-bordergray hover:border-electriclima transition group">
+                    <div class="w-12 h-12 rounded-lg bg-electriclime/10 text-electriclime flex items-center justify-center text-xl mx-auto mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs text-gray-400 font-mono block">Direct Email</span>
+                    <span class="text-white font-bold text-sm sm:text-base mt-1 block">Saiflightmohamed@gmail.com</span>
+                </a>
+
+                <a href="https://wa.me/201060224443" target="_blank" class="bg-darkpanel p-6 rounded-xl border border-bordergray hover:border-electriclima transition group">
+                    <div class="w-12 h-12 rounded-lg bg-electriclime/10 text-electriclime flex items-center justify-center text-xl mx-auto mb-4 group-hover:scale-110 transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span class="text-xs text-gray-400 font-mono block">Phone / WhatsApp</span>
+                    <span class="text-white font-bold text-sm sm:text-base mt-1 block">+20 106 022 4443</span>
+                </a>
+
+                <a href="https://instagram.com/Saifallah.alsayed" target="_blank" class="bg-darkpanel p-6 rounded-xl border border-bordergray hover:border-electriclima transition group">
+                    <div class="w-12 h-12 rounded-lg bg-electriclime/10 text-electriclime flex items-center justify-center text-xl mx-auto mb-4 group-hover:scale-110 transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <span class="text-xs text-gray-400 font-mono block">Instagram</span>
+                    <span class="text-white font-bold text-sm sm:text-base mt-1 block">@Saifallah.alsayed</span>
+                </a>
+            </div>
+
+            <!-- Simple Contact Form Modal Trigger -->
+            <div class="bg-darkpanel p-8 rounded-2xl border border-bordergray max-w-2xl mx-auto text-left">
+                <h3 class="font-display text-xl font-bold text-white mb-4">Send a Direct Message</h3>
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Your Name / Institution</label>
+                        <input type="text" required class="w-full bg-cardbg border border-bordergray rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electriclime" placeholder="Coach / University Recruiter">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Email Address</label>
+                        <input type="email" required class="w-full bg-cardbg border border-bordergray rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electriclime" placeholder="recruiter@university.edu">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Message</label>
+                        <textarea rows="4" required class="w-full bg-cardbg border border-bordergray rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electriclime" placeholder="Inquiry regarding athletic scholarship or recruitment..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-electriclime text-black font-extrabold rounded-lg hover:bg-white transition">
+                        Send Inquiry Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: FOOTER -->
+    <footer class="py-12 bg-black border-t border-bordergray text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <span class="text-white font-display font-bold tracking-wider">SAIFALLAH MOHAMED</span>
+                <span class="text-xs block text-gray-400 mt-1">Competitive Cycling Portfolio © 2026. All rights reserved.</span>
+            </div>
+            <div class="flex space-x-6 text-xl">
+                <a href="https://instagram.com/Saifallah.alsayed" target="_blank" class="text-gray-400 hover:text-electriclime"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/201060224443" target="_blank" class="text-gray-400 hover:text-electriclime"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:Saiflightmohamed@gmail.com" class="text-gray-400 hover:text-electriclime"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-electriclime focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Enlarged View" class="max-h-[80vh] max-w-full object-contain rounded-lg border border-bordergray">
+            <p id="lightbox-caption" class="text-white font-display text-lg mt-4 text-center"></p>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-electriclime text-black px-6 py-3 rounded-lg font-bold shadow-2xl transform translate-y-32 transition-transform duration-300">
+        Message sent successfully! Saifallah's team will get back to you shortly.
+    </div>
+
+    <!-- JAVASCRIPT INTERACTIONS -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Switch the main player to a selected original video clip.
+        function playPortfolioVideo(src, poster, title) {
+            const video = document.getElementById('featured-video');
+            const titleNode = document.getElementById('featured-video-title');
+            video.pause();
+            video.src = src;
+            video.poster = poster;
+            video.load();
+            titleNode.textContent = title;
+            video.play().catch(() => { /* Browser may require the user to press play. */ });
+            video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Lightbox functions
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Form submission toast
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-32');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 4000);
+            e.target.reset();
+        }
+
+        function showToast(text) {
+            const toast = document.getElementById('toast');
+            toast.textContent = text;
+            toast.classList.remove('translate-y-32');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
